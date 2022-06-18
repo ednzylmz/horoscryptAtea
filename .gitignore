@@ -2,3 +2,4 @@ vars.py
 *.mp*
 *.wav
 *.vtt
+__pycache__/*
