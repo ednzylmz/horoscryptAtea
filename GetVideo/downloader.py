@@ -3,9 +3,16 @@ import requests
 
 site_url = 'https://tartuulikool-my.sharepoint.com/:v:/g/personal/karlmv_ut_ee/Eb_w5Gj4N0lIv3sIgmalcjQBWjktodUT3JRiO3GWkRAqCw?e=YfASkt'
 
-URL = site_url + '&download=1'
 
-resp = requests.get(URL) # making requests to server
+r = requests.get(site_url)
+with open('test.html', 'w') as f:
+    f.write(r.text)
 
-with open('download.mp4', "wb") as f: # opening a file handler to create new file 
-    f.write(resp.content) 
+
+# URL = site_url + '&download=1'
+
+# resp = requests.get(URL) # making requests to server
+
+# with open('download.mp4', "wb") as f: # opening a file handler to create new file 
+#     f.write(resp.content) 
+
