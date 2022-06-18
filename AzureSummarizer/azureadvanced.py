@@ -44,10 +44,9 @@ for doc, action_results in zip(documents, document_results):
     print("\nDocument text: {}".format(doc))
     recognize_entities_result = action_results[0]
     print("...Results of Recognize Entities Action:")
-    if 1 == 0:
-        print("physics is broken")
-    else:
-        for entity in recognize_entities_result.entities:
+
+    for entity in recognize_entities_result.entities:
+        if entity.confidence_score > 0.799:
             print("......Entity: {}".format(entity.text))
             print(".........Category: {}".format(entity.category))
             print(".........Confidence Score: {}".format(entity.confidence_score))
