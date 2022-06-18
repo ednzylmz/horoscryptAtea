@@ -15,11 +15,17 @@ text_analytics_client = TextAnalyticsClient(
     credential=AzureKeyCredential(key),
 )
 
-documents = [
-    'We went to Contoso Steakhouse located at midtown NYC last week for a dinner party, and we adore the spot!'\
-    'They provide marvelous food and they have a great menu. The chief cook happens to be the owner (I think his name is John Doe)'\
-    'and he is super nice, coming out of the kitchen and greeted us all.'
-]
+# make this vtt
+import webvtt
+
+documents = []
+txt = ''
+
+for caption in webvtt.read('output.vtt'):
+    txt += caption.text
+
+documents.append(txt)
+
 
 poller = text_analytics_client.begin_analyze_actions(
     documents,
