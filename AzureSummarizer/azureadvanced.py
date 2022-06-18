@@ -38,10 +38,8 @@ for doc, action_results in zip(documents, document_results):
     print("\nDocument text: {}".format(doc))
     recognize_entities_result = action_results[0]
     print("...Results of Recognize Entities Action:")
-    if recognize_entities_result.is_error:
-        print("...Is an error with code '{}' and message '{}'".format(
-            recognize_entities_result.code, recognize_entities_result.message
-        ))
+    if 1 == 0:
+        print("physics is broken")
     else:
         for entity in recognize_entities_result.entities:
             print("......Entity: {}".format(entity.text))
