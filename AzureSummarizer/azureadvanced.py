@@ -48,11 +48,10 @@ for doc, action_results in zip(documents, document_results):
         print("physics is broken")
     else:
         for entity in recognize_entities_result.entities:
-            if entity.confidence_score > 0.799:
-                print("......Entity: {}".format(entity.text))
-                print(".........Category: {}".format(entity.category))
-                print(".........Confidence Score: {}".format(entity.confidence_score))
-                print(".........Offset: {}".format(entity.offset))
+            print("......Entity: {}".format(entity.text))
+            print(".........Category: {}".format(entity.category))
+            print(".........Confidence Score: {}".format(entity.confidence_score))
+            print(".........Offset: {}".format(entity.offset))
 
     recognize_pii_entities_result = action_results[1]
     print("...Results of Recognize PII Entities action:")
