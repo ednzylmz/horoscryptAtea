@@ -12,7 +12,7 @@ def get_vtt_transcript():
 @app.route('/v1/api/summary', methods=['GET'])
 def get_vtt_summary():
     summary, _, _ = summarizer()
-    print("HEREHERHEHRHEHRHEHR", summary)
+    print( summary)
     return summary
 
 @app.route('/getmsg/', methods=['GET'])
@@ -58,7 +58,7 @@ def post_something():
 @app.route('/')
 def index():
     # A welcome message to test our server
-    return "<h1>Welcome to our medium-greeting-api!</h1>"
+    return "<h1>Welcome to our teams transcript api!</h1>"
 
 
 if __name__ == '__main__':
