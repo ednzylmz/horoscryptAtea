@@ -21,7 +21,7 @@ def start_analysis():
     summary, dt, e = main(video)
 
     response = app.response_class(
-        response=json.dumps({'s': summary, 'd': dt, 'e': e}),
+        response=json.dumps({'summary': summary, 'dateTimeEntities': dt, 'eventEntities': e}),
         status=200,
         mimetype='application/json'
     )
