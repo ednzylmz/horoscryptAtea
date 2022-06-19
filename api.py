@@ -1,10 +1,19 @@
+from datetime import date
 from flask import Flask, request, jsonify, send_file
 from importlib_metadata import method_cache
+
+from azureadvanced import summarizer
 app = Flask(__name__)
 
 @app.route('/v1/api/vtt', methods=['GET'])
 def get_vtt_transcript():
     return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
+
+@app.route('/v1/api/summary', methods=['GET'])
+def get_vtt_summary():
+    summary, _, _ = summarizer()
+    print("HEREHERHEHRHEHRHEHR", summary)
+    return summary
 
 @app.route('/getmsg/', methods=['GET'])
 def respond():
