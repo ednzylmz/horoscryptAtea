@@ -3,3 +3,4 @@ vars.py
 *.wav
 __pycache__/*
 .env
+output.vtt

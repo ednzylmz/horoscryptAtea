@@ -18,3 +18,123 @@ WEBVTT
 00:00:42.720 --> 00:00:43.250
 [en-US] Morning.
 
+00:00:44.820 --> 00:00:45.070
+[en-US] No.
+
+00:00:51.770 --> 00:00:54.600
+[en-US] So this meeting that always jokes.
+
+00:00:57.660 --> 00:01:00.170
+[en-US] Do you know any hipster?
+
+00:01:02.670 --> 00:01:03.260
+[en-US] How?
+
+00:01:04.630 --> 00:01:07.170
+[en-US] Just throw it on the Main St.
+
+00:01:10.460 --> 00:01:11.010
+[en-US] OK.
+
+00:01:12.670 --> 00:01:13.860
+[en-US] This was a good one.
+
+00:01:22.620 --> 00:01:25.960
+[en-US] I guess I'm gonna leave here because we are gonna have it.
+
+00:01:28.610 --> 00:01:29.360
+[en-US] OK.
+
+00:01:30.930 --> 00:01:34.620
+[en-US] The room for a second. It's OK if it's all right.
+
+00:01:38.560 --> 00:01:41.320
+[en-US] What are our meeting purposes for today?
+
+00:01:44.870 --> 00:01:45.350
+[en-US] I don't know.
+
+00:01:46.170 --> 00:01:49.340
+[en-US] We need to talk about architecture of our app.
+
+00:01:53.040 --> 00:01:55.390
+[en-US] What is the biggest problem like the?
+
+00:01:56.770 --> 00:02:05.850
+[en-US] Biggest bound right now is that we have different parts of code on different computers and we need to bring it all together and streamline it continuous process.
+
+00:02:07.440 --> 00:02:10.580
+[en-US] Preferably automatic without any manual interventions.
+
+00:02:12.660 --> 00:02:42.050
+[en-US] Yes, and the automatic downloading is kind of where we are lacking because we cannot users to create API keys, connect to it. That's like a intense process even for me. So what I figured out is if we can ask the user to share the link with everyone, then add at the end of like download equals one, it will directly goes to download.
+
+00:02:42.490 --> 00:02:53.840
+[en-US] Which Python can download the recording, but that's what we will be doing. We will not ask for Microsoft Login or we will just for OneDrive link.
+
+00:02:55.390 --> 00:02:55.980
+[en-US] Everyone.
+
+00:02:57.690 --> 00:03:06.120
+[en-US] Then that Download file will be converted into the audio file. Audio file will be processed by their test.
+
+00:03:08.630 --> 00:03:14.050
+[en-US] Function to figure out which parts of it is louder and emphasize it with the.
+
+00:03:15.050 --> 00:03:15.720
+[en-US] Bolding it
+
+00:03:18.910 --> 00:03:27.330
+[en-US] what other, and then from that? File? The video file that should be included. VTT file.
+
+00:03:27.990 --> 00:03:29.920
+[en-US] By the Microsoft Teams.
+
+00:03:30.760 --> 00:03:33.340
+[en-US] So we will get that VTT file.
+
+00:03:34.730 --> 00:03:37.200
+[en-US] And put it into asura's.
+
+00:03:39.070 --> 00:03:41.010
+[en-US] Text API that will.
+
+00:03:42.250 --> 00:04:02.140
+[en-US] That will spew out some keywords. It will summarize it will find the event locations. So for example, one event we will be doing is next week, Wednesday at 3:00 o'clock. We will have another meeting about this app and how we can make it a successful product. Ready to go to market.
+
+00:04:03.440 --> 00:04:10.410
+[en-US] And the task for Carl next week. Next week's meeting is that he prepares more jokes.
+
+00:04:11.360 --> 00:04:12.360
+[en-US] Let's not forget about that.
+
+00:04:13.480 --> 00:04:18.910
+[en-US] What's also I will write to forget about is the security concerns about.
+
+00:04:20.410 --> 00:04:33.100
+[en-US] Downloading the file from OneDrive for now it's fine the way it's described, but in the future we definitely we should figure out Microsoft login and finding the file like that.
+
+00:04:33.940 --> 00:04:35.400
+[en-US] Is the next step, but.
+
+00:04:36.640 --> 00:04:39.950
+[en-US] Yes, for the scope of the.
+
+00:04:41.300 --> 00:04:47.260
+[en-US] Heckathorn we can just do that and we can research it and put it in our presentation as our next step.
+
+00:04:48.220 --> 00:04:54.500
+[en-US] Because it's totally doable, just that we don't want to lose time and lose value in our core functions.
+
+00:04:58.150 --> 00:04:58.960
+[en-US] Anything else?
+
+00:05:00.430 --> 00:05:05.090
+[en-US] Anything else this? I think this meeting was very productive and I will see I think as well.
+
+00:05:06.970 --> 00:05:20.700
+[en-US] I agree that the first few minutes are quite this was, I guess, but you said see that as well. I guess we should vote watch the meeting. Productive or not. Yes it was.
+
+00:05:27.280 --> 00:05:31.910
+[en-US] OK bye everybody bye everybody bye.
+
