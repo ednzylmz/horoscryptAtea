@@ -11,5 +11,5 @@ def main(site_url = tempurl):
 
   # mp3 , wav = extract_audio(mp4)
   # vtt_file = captioner(textkey, textregion , wav )
-  summary, dateTimeEntities, eventEntities, sentiment = summarizer('./artifacts/output.vtt') # for now assume it does work for flask
-  return (summary, dateTimeEntities, eventEntities, sentiment)
+  summary, reminders, events, sentiment = summarizer('./artifacts/output.vtt') # for now assume it does work for flask
+  return (summary, reminders, events, sentiment)

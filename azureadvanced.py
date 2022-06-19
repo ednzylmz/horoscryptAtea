@@ -226,7 +226,7 @@ def summarizer(input_file = './artifacts/output.vtt'):
                 events[entity].append(line)
                 
 
-    return(summary, dateTimeEntities, eventEntities, sentiment)
+    return(summary, reminders, events, sentiment)
     # for reminder in reminders:
     #     print(reminder, reminders[reminder])
 
