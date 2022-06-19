@@ -1,5 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
+from importlib_metadata import method_cache
 app = Flask(__name__)
+
+@app.route('/v1/api/vtt', methods=['GET'])
+def get_vtt_transcript():
+    return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
 
 @app.route('/getmsg/', methods=['GET'])
 def respond():

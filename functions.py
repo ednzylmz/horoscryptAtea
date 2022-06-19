@@ -18,7 +18,6 @@ def extract_audio(file = "./artifacts/input.mp4" , output_mp3 = "./artifacts/inp
   raw_data = sound._data
   sound.export(dst, format="wav")
 
-  print(raw_data)
   return(output_mp3, output_wav)
 
 
