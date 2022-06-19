@@ -123,7 +123,7 @@ def summarizer(input_file = './artifacts/output.vtt'):
                 analyze_sentiment_result.code, analyze_sentiment_result.message
             ))
         else:
-            sentiment = analyze_sentiment_result.positive
+            sentiment = analyze_sentiment_result.confidence_scores.positive,
             print("......Overall sentiment: {}".format(analyze_sentiment_result.sentiment))
             print("......Scores: positive={}; neutral={}; negative={} \n".format(
                 analyze_sentiment_result.confidence_scores.positive,
