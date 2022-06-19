@@ -5,7 +5,7 @@ from flask_cors import cross_origin
 from importlib_metadata import method_cache
 
 from main import *
-
+from mail import *
 from azureadvanced import summarizer
 app = Flask(__name__)
 
@@ -19,14 +19,24 @@ def start_analysis():
     content = request.json
     video = content['link']
     summary, dt, e, sentiment = main(video)
+    html = html_preperare(summary, dt, e)
 
     response = app.response_class(
-        response=json.dumps({'summary': summary, 'dateTimeEntities': dt, 'eventEntities': e, 'sentiment' : sentiment}),
+        response=json.dumps({'summary': summary, 'dateTimeEntities': dt, 'eventEntities': e, 'sentiment' : sentiment, 'mailbody': html}),
         status=200,
         mimetype='application/json'
     )
-
     return response
+
+@app.route('/v1/api/send-email', methods=['POST'])
+@cross_origin()
+def send_api():
+    content = request.json
+    mailbody = content['mailbody']
+    emails = content['emails']
+    send_email(emails, mailbody)
+
+    return jsonify(success=True)
 
 @app.route('/v1/api/summary', methods=['GET'])
 def get_vtt_summary():
