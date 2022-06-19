@@ -9,10 +9,14 @@ app = Flask(__name__)
 def get_vtt_transcript():
     return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
 
+@app.route('/v1/api/vtt', methods=['GET'])
+def get_vtt_transcript():
+    return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
+
 @app.route('/v1/api/summary', methods=['GET'])
 def get_vtt_summary():
     summary, _, _ = summarizer()
-    print( summary)
+    print(summary)
     return summary
 
 @app.route('/getmsg/', methods=['GET'])
