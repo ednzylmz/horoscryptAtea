@@ -9,9 +9,16 @@ app = Flask(__name__)
 def get_vtt_transcript():
     return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
 
+<<<<<<< HEAD
 @app.route('/v1/api/vtt', methods=['GET'])
 def get_vtt_transcript():
     return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
+=======
+@app.route('/v1/api/start-analysis', methods=['POST'])
+def start_analysis():
+    print(request.form.get('link'))
+    return 200
+>>>>>>> 1245779 (add api endpoint for starting the video analysis)
 
 @app.route('/v1/api/summary', methods=['GET'])
 def get_vtt_summary():
@@ -67,4 +74,4 @@ def index():
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=3001)
