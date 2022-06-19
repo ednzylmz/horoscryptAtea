@@ -1,6 +1,10 @@
 from datetime import date
+import json
 from flask import Flask, request, jsonify, send_file
+from flask_cors import cross_origin
 from importlib_metadata import method_cache
+
+from main import *
 
 from azureadvanced import summarizer
 app = Flask(__name__)
@@ -9,16 +13,20 @@ app = Flask(__name__)
 def get_vtt_transcript():
     return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
 
-<<<<<<< HEAD
-@app.route('/v1/api/vtt', methods=['GET'])
-def get_vtt_transcript():
-    return send_file('./artifacts/output.vtt', as_attachment=True, attachment_filename='output.vtt')
-=======
 @app.route('/v1/api/start-analysis', methods=['POST'])
+@cross_origin()
 def start_analysis():
-    print(request.form.get('link'))
-    return 200
->>>>>>> 1245779 (add api endpoint for starting the video analysis)
+    content = request.json
+    video = content['link']
+    summary, dt, e = main(video)
+
+    response = app.response_class(
+        response=json.dumps({'s': summary, 'd': dt, 'e': e}),
+        status=200,
+        mimetype='application/json'
+    )
+
+    return response
 
 @app.route('/v1/api/summary', methods=['GET'])
 def get_vtt_summary():

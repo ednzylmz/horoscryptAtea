@@ -1,3 +1,4 @@
+from flask import jsonify
 from functions import *
 from captioning import *
 from vars import *
@@ -10,6 +11,5 @@ def main(site_url = tempurl):
 
   mp3 , wav = extract_audio(mp4)
   vtt_file = captioner(textkey, textregion , wav)
-  vtt_file = './artifacts/output.vtt'
   summary, dateTimeEntities, eventEntities = summarizer(vtt_file) # for now assume it does work for flask
-  return summary, dateTimeEntities, eventEntities
+  return (summary, dateTimeEntities, eventEntities)
