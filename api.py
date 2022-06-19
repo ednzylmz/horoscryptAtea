@@ -18,10 +18,10 @@ def get_vtt_transcript():
 def start_analysis():
     content = request.json
     video = content['link']
-    summary, dt, e = main(video)
+    summary, dt, e, sentiment = main(video)
 
     response = app.response_class(
-        response=json.dumps({'summary': summary, 'dateTimeEntities': dt, 'eventEntities': e}),
+        response=json.dumps({'summary': summary, 'dateTimeEntities': dt, 'eventEntities': e, 'sentiment' : sentiment}),
         status=200,
         mimetype='application/json'
     )

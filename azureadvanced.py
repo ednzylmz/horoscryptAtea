@@ -21,6 +21,7 @@ def summarizer(input_file = './artifacts/output.vtt'):
     import webvtt
 
     summary = ''
+    sentiment = 1
     transcript = [] # used for reminders - entity matching at the end of this file
     documents = []
     txt = ''
@@ -122,6 +123,7 @@ def summarizer(input_file = './artifacts/output.vtt'):
                 analyze_sentiment_result.code, analyze_sentiment_result.message
             ))
         else:
+            sentiment = analyze_sentiment_result.positive
             print("......Overall sentiment: {}".format(analyze_sentiment_result.sentiment))
             print("......Scores: positive={}; neutral={}; negative={} \n".format(
                 analyze_sentiment_result.confidence_scores.positive,
@@ -224,7 +226,7 @@ def summarizer(input_file = './artifacts/output.vtt'):
                 events[entity].append(line)
                 
 
-    return(summary, dateTimeEntities, eventEntities)
+    return(summary, dateTimeEntities, eventEntities, sentiment)
     # for reminder in reminders:
     #     print(reminder, reminders[reminder])
 
